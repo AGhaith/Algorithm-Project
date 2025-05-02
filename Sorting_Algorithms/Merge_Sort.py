@@ -1,6 +1,7 @@
 #Merge Sort
+import time
+import random
 #Merge Complexity O(N)
-
 def merge(First_Part, Second_Part):
     result = []
     First_Part_Pointer = Second_Part_Pointer = 0
@@ -16,10 +17,19 @@ def merge(First_Part, Second_Part):
     return result
 
 #Merge Sort Complexity O(NlogN)
-def merge_sort(Merge):
-    if len(Merge) <= 1:
-        return Merge
-    mid = len(Merge) // 2
-    left = merge_sort(Merge[:mid])
-    right = merge_sort(Merge[mid:])
+def merge_sort(Arr):
+    if len(Arr) <= 1:
+        return Arr
+    mid = len(Arr) // 2
+    left = merge_sort(Arr[:mid])
+    right = merge_sort(Arr[mid:])
     return merge(left, right)
+def main():
+    arr = [random.randint(0, 100) for _ in range(10)]
+    start=time.time()
+    merge_sort(arr)
+    end=time.time()
+    print(f"time takes to sort is : {end-start:.18f}")
+
+if __name__ == "__main__":
+    main()
