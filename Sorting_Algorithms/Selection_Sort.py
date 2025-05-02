@@ -10,7 +10,7 @@ Time complexities:
 - Worst case = O(n^2)
 
 Space complexity : 
- - O(1)
+- O(1)
 
 '''
 
