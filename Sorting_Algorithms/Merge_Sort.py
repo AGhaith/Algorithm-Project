@@ -1,3 +1,4 @@
+#Ahmed Ghaith
 #Merge Sort
 import time
 import random
