@@ -1,7 +1,7 @@
 #Insertion Sort
 
 
-#   time complexities   
+#   time complexities
 # best case = 0(n) => will not enter the while loop
 # average case = Theta(n^2)
 # worst case = O(n^2)
