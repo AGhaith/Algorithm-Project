@@ -1,7 +1,6 @@
-#Ahmed Ghaith
 #Merge Sort
-import time
-import random
+from Utilities.Global_Variables import random,time
+
 #Merge Complexity O(N)
 def merge(First_Part, Second_Part):
     result = []
@@ -18,19 +17,13 @@ def merge(First_Part, Second_Part):
     return result
 
 #Merge Sort Complexity O(NlogN)
-def merge_sort(Arr):
-    if len(Arr) <= 1:
-        return Arr
-    mid = len(Arr) // 2
-    left = merge_sort(Arr[:mid])
-    right = merge_sort(Arr[mid:])
+def merge_sort(N):
+    arr = [random.randint(0, 100) for _ in range(N)]
+    Start_Time = time.time()
+    length = len(arr)
+    if length <= 1:
+        return arr
+    mid = length // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
     return merge(left, right)
-def main():
-    arr = [random.randint(0, 100) for _ in range(10)]
-    start=time.time()
-    merge_sort(arr)
-    end=time.time()
-    print(f"time takes to sort is : {end-start:.18f}")
-
-if __name__ == "__main__":
-    main()
