@@ -14,7 +14,7 @@ Space complexity :
 
 '''
 
-import Utilities.Global_Variables
+import Utilities.Global_Variables as Global_Variables
 def selection_sort():
     size = Global_Variables.LENGTH_OF_ARRAY
     L = Global_Variables.arr
