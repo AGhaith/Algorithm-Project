@@ -10,7 +10,13 @@ MAIN_WINDOW_HEIGHT = 600
 
 # Algorithm Options
 ALGORITHM_OPTIONS = ["Bubble Sort", "Quick Sort", "Merge Sort", "Selection Sort", "Insertion Sort"]
-
+performance_data = {
+    "Bubble Sort": [],
+    "Quick Sort": [],
+    "Merge Sort": [],
+    "Selection Sort": [],
+    "Insertion Sort": []
+}
 # Tkinter Widgets
 Main_Window = tk.Tk()
 canvas = tk.Canvas(Main_Window, width=CANVAS_WIDTH, height=CANVAS_HEIGHT, bg="white")

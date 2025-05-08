@@ -3,10 +3,13 @@ from Utilities.Results_Finalization import View_Results
 from Error_Handling.Error import check_errors
 from Utilities.Global_Variables import Main_Window
 import Utilities.Global_Variables as Global_Variables
+from Graphs import graph
 
 def start_sort(algorithm):
     if ( not check_errors(algorithm) ):
         return
+    
+    Global_Variables.NUMBER_OF_OPERATIONS = 0
     # Set Global Varaible
     Global_Variables.LENGTH_OF_ARRAY = int(Global_Variables.n_entry.get())
     # Generate the random array
@@ -30,5 +33,13 @@ def start_sort(algorithm):
     end_time = Global_Variables.time.perf_counter()
     print("Time taken:", end_time - Start_time, "seconds")
     Global_Variables.TIME_TAKEN = end_time - Start_time
+    # Store performance data
+    Global_Variables.performance_data[algorithm].append(
+    (Global_Variables.LENGTH_OF_ARRAY, Global_Variables.NUMBER_OF_OPERATIONS)
+)
+
+
     # Show the result window
     View_Results()
+    graph.show_graph(algorithm)
+
