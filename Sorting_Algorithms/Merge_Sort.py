@@ -1,5 +1,6 @@
 #Merge Sort
-from Utilities.Global_Variables import random,time
+import Utilities.Global_Variables as gv
+import Drawing.MergeDrawing as draw
 
 #Merge Complexity O(N)
 def merge(First_Part, Second_Part):
@@ -7,8 +8,6 @@ def merge(First_Part, Second_Part):
     First_Part_Pointer = Second_Part_Pointer = 0
     while First_Part_Pointer < len(First_Part) and Second_Part_Pointer < len(Second_Part):
         if First_Part[First_Part_Pointer] < Second_Part[Second_Part_Pointer]:
-            color_array[First_Part_Pointer] = "red"
-            color_array[Second_Part_Pointer] = "red"
             result.append(First_Part[First_Part_Pointer])
             First_Part_Pointer += 1
         else:
@@ -19,9 +18,7 @@ def merge(First_Part, Second_Part):
     return result
 
 #Merge Sort Complexity O(NlogN)
-def merge_sort(N):
-    arr = [random.randint(0, 100) for _ in range(N)]
-    Start_Time = time.time()
+def merge_sort(arr):
     length = len(arr)
     if length <= 1:
         return arr
@@ -29,3 +26,7 @@ def merge_sort(N):
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
     return merge(left, right)
+ 
+def start_merge_sort():
+    arr1 = gv.arr
+    sorted_arr = merge_sort(arr1)

@@ -1,8 +1,10 @@
-from Sorting_Algorithms import bubble_sort, quick_sort, merge_sort, selection_sort, insertion_sort
+from Sorting_Algorithms import bubble_sort, quick_sort, selection_sort, insertion_sort
 from Utilities.Results_Finalization import View_Results
 from Error_Handling.Error import check_errors
 from Utilities.Global_Variables import Main_Window
 import Utilities.Global_Variables as Global_Variables
+from Sorting_Algorithms.Merge_Sort import start_merge_sort
+import Drawing.MergeDrawing as draw
 
 def start_sort(algorithm):
     if ( not check_errors(algorithm) ):
@@ -21,7 +23,7 @@ def start_sort(algorithm):
     elif algorithm == "Quick Sort":
         quick_sort()
     elif algorithm == "Merge Sort":
-        merge_sort()
+        draw.MegreDrawing()
     elif algorithm == "Selection Sort":
         selection_sort()
     elif algorithm == "Insertion Sort":
