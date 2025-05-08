@@ -27,5 +27,5 @@ def draw_array(color_array=None):
 
         gv.canvas.create_text((x0 + x1) / 2, text_y, text=str(val), anchor="n", font=("Arial", 10))
 
-    gv.time.sleep(0.05)
+    #gv.time.sleep(0.05)
     gv.canvas.update_idletasks()
