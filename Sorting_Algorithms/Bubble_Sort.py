@@ -12,5 +12,5 @@ def bubble_sort(x):
 
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                gv.NUMBER_OF_OPERATIONS += 1
+            gv.NUMBER_OF_OPERATIONS += 1
 
