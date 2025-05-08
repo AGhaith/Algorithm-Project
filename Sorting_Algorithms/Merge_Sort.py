@@ -7,6 +7,8 @@ def merge(First_Part, Second_Part):
     First_Part_Pointer = Second_Part_Pointer = 0
     while First_Part_Pointer < len(First_Part) and Second_Part_Pointer < len(Second_Part):
         if First_Part[First_Part_Pointer] < Second_Part[Second_Part_Pointer]:
+            color_array[First_Part_Pointer] = "red"
+            color_array[Second_Part_Pointer] = "red"
             result.append(First_Part[First_Part_Pointer])
             First_Part_Pointer += 1
         else:
