@@ -31,7 +31,6 @@ def selection_sort():
         for j in range(i+1 , size):
             color_array = ["green" if x == i else "red" if x == j or x == minimum_indx else "blue" for x in range(size)]
             draw.draw_array(color_array)
-            time.sleep(0.01)  
 
             if L[j] < L[minimum_indx]:
                 minimum_indx = j
@@ -41,7 +40,6 @@ def selection_sort():
 
         color_array = ["green" if x == i else "blue" for x in range(size)]
         draw.draw_array(color_array)
-        time.sleep(0.01)  
 
 
 
