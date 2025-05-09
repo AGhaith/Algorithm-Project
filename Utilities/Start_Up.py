@@ -23,7 +23,7 @@ def start_sort(algorithm):
     elif algorithm == "Quick Sort":
         quick_sort()
     elif algorithm == "Merge Sort":
-        draw.MegreDrawing()
+        start_merge_sort()
     elif algorithm == "Selection Sort":
         selection_sort()
     elif algorithm == "Insertion Sort":
