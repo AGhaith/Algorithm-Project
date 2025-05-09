@@ -29,7 +29,7 @@ def start_sort(algorithm):
         elif algorithm == "Selection Sort":
             selection_sort()
         elif algorithm == "Insertion Sort":
-            insertion_sort()
+            insertion_sort(i)
         # End timer and calculate time taken
         end_time = Global_Variables.time.perf_counter()
         print("Time taken:", end_time - Start_time, "seconds")
