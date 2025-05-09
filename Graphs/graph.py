@@ -38,7 +38,7 @@ def show_graph(algorithm):
         # Formatting
         ax.set_xlabel("Number of Elements", fontsize=12)
         ax.set_ylabel("Number of Opreations", fontsize=12)
-        ax.set_title("Sorting Algorithm Performance", fontsize=14)
+        ax.set_title("Sorting Algorithm Performance: " + algorithm, fontsize=14)
         ax.grid(True)
 
     # Display the graph

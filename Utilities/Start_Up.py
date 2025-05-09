@@ -27,7 +27,7 @@ def start_sort(algorithm):
         elif algorithm == "Merge Sort":
             merge_sort()
         elif algorithm == "Selection Sort":
-            selection_sort()
+            selection_sort(i)
         elif algorithm == "Insertion Sort":
             insertion_sort()
         # End timer and calculate time taken
