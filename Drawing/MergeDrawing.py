@@ -21,3 +21,8 @@ def MergeDrawing(array, level, x_start):
     gv.canvas.update_idletasks()
     gv.time.sleep(0.5)
 
+def window():
+    tk.Label(gv.Main_Window, text="Enter the array with sapces between:").grid(row=1, column=1, padx=10, pady=5)
+    gv.n_entry.grid(row=1, column=2, padx=10, pady=5)
+    gv.n_entry.insert(0, "10")
+

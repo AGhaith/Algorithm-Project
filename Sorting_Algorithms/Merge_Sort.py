@@ -1,6 +1,7 @@
 #Merge Sort
 import Utilities.Global_Variables as gv
 import Drawing.MergeDrawing as draw
+import tkinter as tk
 
 #Merge Complexity O(N)
 def merge(First_Part, Second_Part, level, x_start):
@@ -38,6 +39,8 @@ def merge_sort(arr, level, x_start):
 
  
 def start_merge_sort():
+    gv.canvas.delete("all")
     arr = gv.MERGE_ARRAY
     sorted_arr = merge_sort(arr, level, -1)
+    gv.canvas.delete("all")
 
