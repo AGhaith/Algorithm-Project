@@ -1,29 +1,46 @@
 #Merge Sort
-from Utilities.Global_Variables import random,time
+import Utilities.Global_Variables as gv
+import Drawing.MergeDrawing as draw
 
 #Merge Complexity O(N)
-def merge(First_Part, Second_Part):
+def merge(First_Part, Second_Part, level, x_start):
+    gv.NUMBER_OF_OPERATIONS += 1
     result = []
-    First_Part_Pointer = Second_Part_Pointer = 0
-    while First_Part_Pointer < len(First_Part) and Second_Part_Pointer < len(Second_Part):
-        if First_Part[First_Part_Pointer] < Second_Part[Second_Part_Pointer]:
-            result.append(First_Part[First_Part_Pointer])
-            First_Part_Pointer += 1
+    i = j = 0
+    while i < len(First_Part) and j < len(Second_Part):
+        if First_Part[i] < Second_Part[j]:
+            result.append(First_Part[i])
+            i += 1
         else:
-            result.append(Second_Part[Second_Part_Pointer])
-            Second_Part_Pointer += 1
-    result.extend(First_Part[First_Part_Pointer:])
-    result.extend(Second_Part[Second_Part_Pointer:])
+            result.append(Second_Part[j])
+            j += 1
+    result.extend(First_Part[i:])
+    result.extend(Second_Part[j:])
+    draw.MergeDrawing(result, level, x_start)
     return result
 
-#Merge Sort Complexity O(NlogN)
-def merge_sort(N):
-    arr = [random.randint(0, 100) for _ in range(N)]
-    Start_Time = time.time()
+
+level = 1
+
+def merge_sort(arr, level, x_start):
+    gv.NUMBER_OF_OPERATIONS += 1 
     length = len(arr)
     if length <= 1:
+        draw.MergeDrawing(arr, level, x_start)
         return arr
-    mid = length // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-    return merge(left, right)
+
+    draw.MergeDrawing(arr, level, x_start)
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid], level + 1, x_start)
+    right = merge_sort(arr[mid:], level + 1, x_start + mid)
+
+    return merge(left, right, level, x_start)
+
+
+ 
+def start_merge_sort():
+    gv.canvas.delete("all")
+    arr = gv.arr
+    sorted_arr = merge_sort(arr, level, -1)
+
