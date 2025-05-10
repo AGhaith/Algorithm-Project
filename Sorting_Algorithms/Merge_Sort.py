@@ -43,5 +43,4 @@ def start_merge_sort():
     gv.canvas.delete("all")
     arr = gv.arr
     sorted_arr = merge_sort(arr, level, -1)
-    gv.canvas.delete("all")
 

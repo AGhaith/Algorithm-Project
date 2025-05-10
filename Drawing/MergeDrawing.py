@@ -18,7 +18,7 @@ def MergeDrawing(array, level, x_start):
         gv.canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=str(val), anchor="center", font=("Arial", 10))
 
     gv.canvas.update_idletasks()
-    gv.time.sleep(0.5)
+    gv.time.sleep(0.05)
 
 
 
