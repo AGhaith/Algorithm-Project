@@ -45,3 +45,4 @@ def show_graph(algorithm):
     canvas = FigureCanvasTkAgg(fig, master=graph_window)
     canvas.draw()
     canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
+    data.clear()
