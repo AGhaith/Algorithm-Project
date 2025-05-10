@@ -27,7 +27,7 @@ def start_sort(algorithm):
         elif algorithm == "Quick Sort":
             quick_sort()
         elif algorithm == "Merge Sort":
-            merge_sort()
+            start_merge_sort()
         elif algorithm == "Selection Sort":
             selection_sort(i)
         elif algorithm == "Insertion Sort":
