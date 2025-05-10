@@ -17,6 +17,20 @@ def check_errors(algorithm):
     if algorithm not in gv.ALGORITHM_OPTIONS:
         show_error("Please select a valid algorithm.")
         return False
+    if algorithm == "Merge Sort":
+        try:
+            input_text = gv.n_entry.get()
+            for c in input_text:
+                 if not (c.isdigit() or c == ','):
+                    show_error("Please enter only integers and commas in the array.")
+                    return False
+            arr = list(map(int, gv.n_entry.get().split(',')))
+            if len(arr) == 0:
+                raise ValueError
+            return True
+        except ValueError:
+            show_error("Please enter a valid array of integers separated by commas.")
+            return False
     try :
         if(int(gv.n_entry.get()) > 0):
             return True
