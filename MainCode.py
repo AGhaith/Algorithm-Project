@@ -1,6 +1,5 @@
 from Utilities.Start_Up import *
 from Utilities.Global_Variables import *
-from Utilities.Algo_tracer import on_algorithm_change
 def main():
     Main_Window.title("Sorting Visualizer")
 
@@ -20,16 +19,9 @@ def main():
     n_entry.grid(row=1, column=2, padx=10, pady=5)
     n_entry.insert(0, "10")
 
-    label_array = tk.Label(Main_Window, text="Enter the array (comma-separated)(recomnded max 13):")
-    entry_array = tk.Entry(Main_Window, width=30)
-        
-    selected_algorithm.trace_add("write", lambda *args: on_algorithm_change(
-    selected_algorithm.get(), label_n, n_entry, label_array, entry_array
-))
-
-
+ 
     tk.Button(Main_Window, text="Start Sorting",
-        command=lambda: start_sort(selected_algorithm.get() ,entry_array)
+        command=lambda: start_sort(selected_algorithm.get())
         ).grid(row=1, column=3, padx=10, pady=10)
 
     Main_Window.mainloop()

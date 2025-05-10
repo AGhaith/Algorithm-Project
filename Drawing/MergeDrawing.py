@@ -1,5 +1,4 @@
 import Utilities.Global_Variables as gv
-import tkinter as tk 
 def MergeDrawing(array, level, x_start):
     box_width = 50
     box_height = 30

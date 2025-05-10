@@ -1,10 +1,10 @@
 #Merge Sort
 import Utilities.Global_Variables as gv
 import Drawing.MergeDrawing as draw
-import tkinter as tk
 
 #Merge Complexity O(N)
 def merge(First_Part, Second_Part, level, x_start):
+    gv.NUMBER_OF_OPERATIONS += 1
     result = []
     i = j = 0
     while i < len(First_Part) and j < len(Second_Part):
@@ -23,6 +23,7 @@ def merge(First_Part, Second_Part, level, x_start):
 level = 1
 
 def merge_sort(arr, level, x_start):
+    gv.NUMBER_OF_OPERATIONS += 1 
     length = len(arr)
     if length <= 1:
         draw.MergeDrawing(arr, level, x_start)
@@ -40,7 +41,7 @@ def merge_sort(arr, level, x_start):
  
 def start_merge_sort():
     gv.canvas.delete("all")
-    arr = gv.MERGE_ARRAY
+    arr = gv.arr
     sorted_arr = merge_sort(arr, level, -1)
     gv.canvas.delete("all")
 
