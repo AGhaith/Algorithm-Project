@@ -23,7 +23,7 @@ def start_sort(algorithm):
         if algorithm == "Bubble Sort":
             bubble_sort(i)
         elif algorithm == "Quick Sort":
-            quick_sort()
+            quick_sort(Global_Variables.arr,0,i-1)
         elif algorithm == "Merge Sort":
             merge_sort()
         elif algorithm == "Selection Sort":
