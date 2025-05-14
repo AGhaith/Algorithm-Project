@@ -16,7 +16,8 @@ def merge(First_Part, Second_Part, level, x_start):
             j += 1
     result.extend(First_Part[i:])
     result.extend(Second_Part[j:])
-    draw.MergeDrawing(result, level, x_start)
+    if(gv.MERGE_COUNTER == gv.LENGTH_OF_ARRAY):
+        draw.MergeDrawing(result, level, x_start)
     return result
 
 
@@ -26,10 +27,11 @@ def merge_sort(arr, level, x_start):
     gv.NUMBER_OF_OPERATIONS += 1 
     length = len(arr)
     if length <= 1:
-        draw.MergeDrawing(arr, level, x_start)
+        if(gv.MERGE_COUNTER == gv.LENGTH_OF_ARRAY):
+            draw.MergeDrawing(arr, level, x_start)
         return arr
-
-    draw.MergeDrawing(arr, level, x_start)
+    if(gv.MERGE_COUNTER == gv.LENGTH_OF_ARRAY):
+        draw.MergeDrawing(arr, level, x_start)
 
     mid = len(arr) // 2
     left = merge_sort(arr[:mid], level + 1, x_start)
@@ -41,6 +43,9 @@ def merge_sort(arr, level, x_start):
  
 def start_merge_sort():
     gv.canvas.delete("all")
+    gv.MERGE_COUNTER += 1
     arr = gv.arr
     sorted_arr = merge_sort(arr, level, -1)
+    if(gv.MERGE_COUNTER == gv.LENGTH_OF_ARRAY):
+        gv.MERGE_COUNTER = 0 
 
