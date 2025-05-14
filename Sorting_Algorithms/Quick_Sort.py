@@ -1,16 +1,54 @@
 #omda
 import random
+import Utilities.Global_Variables as gv
+import Drawing.Drawing as draw
+import time
 
-def quick_sort(arr):
+def quick_sort(array, start=0, end=None):
+    if end is None:
+        end = len(array) - 1
 
-    if len(arr) <= 1:
-        return arr
-    mid = len(arr) // 2
-    pivot = arr[mid]
+    if start < end:
+        gv.NUMBER_OF_OPERATIONS += 1
+        pivot_index = partition(array, start, end)
+        quick_sort(array, start, pivot_index - 1)
+        quick_sort(array, pivot_index + 1, end)
 
-    arr = arr[:mid] + arr[mid+1:]
+    return array
 
-    left = [x for x in arr if x < pivot]
-    right = [x for x in arr if x >= pivot]
+def partition(array, start, end):
+    pivot_value = array[end]
+    smaller_element_index = start 
 
-    return quick_sort(left) + [pivot] + quick_sort(right)
+    for current_index in range(start, end):
+        if array[current_index] <= pivot_value:
+            gv.NUMBER_OF_OPERATIONS += 1
+            array[smaller_element_index], array[current_index] = array[current_index], array[smaller_element_index]
+
+            # Visualization Part
+            if len(array) == gv.LENGTH_OF_ARRAY:
+                color_array = [
+                    "red" if i == end else  # pivot
+                    "green" if i == smaller_element_index or i == current_index else
+                    "blue"
+                    for i in range(len(array))
+                ]
+                draw.draw_array(color_array)
+                time.sleep(0.05)
+
+            smaller_element_index += 1
+
+    
+    array[smaller_element_index], array[end] = array[end], array[smaller_element_index]
+    gv.NUMBER_OF_OPERATIONS += 1 #last swap
+
+    #Final placement visualization
+    if len(array) == gv.LENGTH_OF_ARRAY:
+        color_array = [
+            "purple" if i == smaller_element_index else "blue"
+            for i in range(len(array))
+        ]
+        draw.draw_array(color_array)
+        time.sleep(0.05)
+
+    return smaller_element_index
