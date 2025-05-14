@@ -18,7 +18,7 @@ def quick_sort(array, start=0, end=None):
 
 def partition(array, start, end):
     pivot_value = array[end]
-    smaller_element_index = start 
+    smaller_element_index = start
 
     for current_index in range(start, end):
         if array[current_index] <= pivot_value:
@@ -38,7 +38,7 @@ def partition(array, start, end):
 
             smaller_element_index += 1
 
-    
+
     array[smaller_element_index], array[end] = array[end], array[smaller_element_index]
     gv.NUMBER_OF_OPERATIONS += 1 #last swap
 

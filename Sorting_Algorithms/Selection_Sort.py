@@ -9,7 +9,7 @@ Time complexities:
 - Average case = O(n^2)
 - Worst case = O(n^2)
 
-Space complexity : 
+Space complexity :
 - O(1)
 
 '''
@@ -18,11 +18,11 @@ import Utilities.Global_Variables as gv
 import Drawing.Drawing as draw
 import Utilities.Global_Variables as Global_Variables
 import Graphs as graph
-import time  
+import time
 
 def selection_sort(x):
     L = Global_Variables.arr
- 
+
     size = x
 
     for i in range(size):
@@ -37,7 +37,7 @@ def selection_sort(x):
 
             if L[j] < L[minimum_indx]:
                 minimum_indx = j
-                
+
 
         L[i], L[minimum_indx] = L[minimum_indx], L[i]
         Global_Variables.NUMBER_OF_OPERATIONS += 1
